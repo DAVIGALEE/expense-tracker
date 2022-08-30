@@ -15,32 +15,46 @@ const actionCreator = (value,amount) => {
         }
     }
 }
+const actionDeleteCreator = (index) => {
+
+    return {
+        type:'delete_transaction',
+        payload:index
+    }
+}
 
 
 function Transaction() {
     let data = useSelector(state=>{
         return state.add.transactionList.map(element =>  element)
     })
- 
+    
     let list = data.map((e,i)=> {
         if(e.amount<0){
+           
         return(
-        <div key={i} className=" block container d-flex flex-row gap-5 col-12 px-5 py-3"> 
+        <div key={i} className="block container d-flex flex-row gap-5 col-12 px-5 py-3" data-toggle="tooltip" data-placement="bottom" title="Remove" onClick={(ev)=>handleDelete(e.value,i)}> 
         <h4 >{e.value}</h4>
         <h4 className="amountNegative col-md-3 col-lg-7">${e.amount}</h4>
         </div> 
         )
     }else{
+        
         return(
-            <div key={i} className=" block container-fluid d-flex flex-row gap-5 col-12 px-5 py-3"> 
+            <div key={i} className="block container-fluid d-flex flex-row gap-5 col-12 px-5 py-3" data-toggle="tooltip" data-placement="bottom" title="Remove" onClick={(ev)=>handleDelete(e.value,i)}> 
             <h4 >{e.value}</h4>
             <h4 className="amountPositive  col-md-3 col-lg-7">${e.amount}</h4>
             <span></span>
             </div> 
             )
     }
+   
     })
-
+    
+    const handleDelete = (value,index) => {
+        console.log(index)
+        dispatch(actionDeleteCreator(index))
+    }
     const dispatch = useDispatch()
     const [value,setValue] = useState("")
     const [amount,setAmount] = useState(0)

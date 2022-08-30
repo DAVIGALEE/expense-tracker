@@ -4,6 +4,7 @@
 .block{
     box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
     margin-bottom:10px !important;
+    cursor:pointer !important;
 }
 .amountNegative{
     color:rgb(236, 18, 18) !important;
