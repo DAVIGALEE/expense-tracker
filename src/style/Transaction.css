@@ -1,0 +1,13 @@
+.inp{
+    font-size:large !important;
+}
+.block{
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+    margin-bottom:10px !important;
+}
+.amountNegative{
+    color:rgb(236, 18, 18) !important;
+}
+.amountPositive{
+    color:rgb(16, 172, 16) !important;
+}
