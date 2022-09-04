@@ -1,7 +1,7 @@
 const initialState = {
     transactionList:[],
 }
- const addTransaction = (state = initialState,action) => {
+ const transactionReducer = (state = initialState,action) => {
     switch(action.type){
             case 'add_transaction':
                 return {
@@ -21,4 +21,4 @@ const initialState = {
     return state;
 }
 
-export default addTransaction;
+export default transactionReducer;

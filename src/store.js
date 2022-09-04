@@ -1,14 +1,15 @@
 import {configureStore} from '@reduxjs/toolkit';
-import addTransaction from './reducers/addTransaction'
+import transactionReducer from './reducers/transactionReducer'
 
 
  const store = configureStore({
     reducer:{
-        add : addTransaction
+        add : transactionReducer
     }
 });
  const saveToLocalStorage = (state) => {
     try {
+      console.log(state)
         let data = state.add.transactionList
         localStorage.setItem('state', JSON.stringify(data));
       } 

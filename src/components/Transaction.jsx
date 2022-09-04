@@ -76,8 +76,8 @@ function Transaction() {
     
     <div className="container-fluid d-flex flex-column col-2 justify-content-center align-items-center gap-4">
     <History list={list} state={data}/>
-    <input type="text" onChange={handleChange} className="inp col-12 mb-5 form-control" placeholder/>
-    <input type="number" onChange={handleChangeAmount} className="inp col-12 mb-5 form-control " placeholder/>
+    <input type="text" onChange={handleChange} className="inp col-12 mb-5 form-control" id="product" placeholder="Product"/>   
+    <input type="number" onChange={handleChangeAmount} className="inp col-12 mb-5 form-control " placeholder="Income/Expenditure"/>
     <button className='btn btn-dark col-7 px-5 py-3 ' onClick={handleAdd}>ADD</button>
     </div>
     </>
